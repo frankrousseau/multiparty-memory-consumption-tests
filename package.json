@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "express": "^4.6.1",
+    "multiparty": "^3.3.0",
+    "request": "^2.37.0",
+    "heapdump": "^0.2.9"
+  },
+  "devDependencies": {}
+}
