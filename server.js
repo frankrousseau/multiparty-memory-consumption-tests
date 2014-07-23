@@ -18,7 +18,7 @@ app.get('/', function(req, res){
 app.post('/upload', function(req, res, next){
   var form = new multiparty.Form();
 
-  // Listen for incoming part of the form.
+  // Listen for incoming parts of the form.
   form.on('part', function(part) {
     var name, stream;
 
@@ -33,7 +33,7 @@ app.post('/upload', function(req, res, next){
       // Write file in upload dir.
       stream = fs.createWriteStream(path.join(upload_dir, name));
 
-      // Display sometion when file finished to upload.
+      // Display something when file finished to upload.
       part.on('end', function(err) {
         if (err) {
           console.log(err);
@@ -42,7 +42,7 @@ app.post('/upload', function(req, res, next){
         }
       });
 
-      // Pipe the part parsing to the file writing stream.
+      // Pipe the part parsing stream to the file writing stream.
       part.pipe(stream);
 
     }
